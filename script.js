@@ -6,5 +6,9 @@ function getRandomInt(max) {
 function getComputerChoice() {
   //generate a random integer from 0 to 3
   const randomInt = getRandomInt(3);
-
+  //initialize string variable computerChoice.
+  //if randomInt is 0 set computerChoice to 'rock'.
+  //if randomInt is 0 set computerChoice to 'paper'.
+  //if randomInt is 0 set computerChoice to 'scissors'.
+  //return value of computerChoice
 }
