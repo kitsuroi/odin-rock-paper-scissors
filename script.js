@@ -5,8 +5,3 @@ function getRandomInt(max) {
 
 function getComputerChoice() {
 }
-
-console.log(getRandomInt(3));
-console.log(getRandomInt(3));
-console.log(getRandomInt(3));
-console.log(getRandomInt(3));
