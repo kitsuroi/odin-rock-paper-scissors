@@ -23,3 +23,10 @@ function getComputerChoice() {
   //return value of computerChoice
   return computerChoice;
 }
+
+//getHumanChoice of rock, paper or scissors.
+//initialize string variable userChoice.
+//prompt user for choice.
+//set userChoice to lowercase.
+//check for valid choice(rock, paper or scissors).
+//return userChoice
