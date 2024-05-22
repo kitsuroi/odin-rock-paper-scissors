@@ -44,3 +44,6 @@ function getHumanChoice() {
     return getHumanChoice();
   }
 }
+
+//initialize integer variable humanScore set value to 0
+//initialize integer variable computerScore set value to 0
