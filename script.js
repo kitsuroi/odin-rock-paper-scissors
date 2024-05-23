@@ -77,6 +77,7 @@ function playRound() {
   }
   //otherwise increment computerScore and display human loss.
   //display scores.
+  console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
 }
 
 playRound();
