@@ -16,15 +16,15 @@ function getComputerChoice() {
   let computerChoice = '';
   //if randomInt is 0 set computerChoice to 'rock'.
   if (randomInt === 0) {
-    computerChoice = 'rock';
+    computerChoice = 'Rock';
   }
   //if randomInt is 0 set computerChoice to 'paper'.
   else if (randomInt === 1) {
-    computerChoice = 'paper';
+    computerChoice = 'Paper';
   }
   //if randomInt is 0 set computerChoice to 'scissors'.
   else {
-    computerChoice = 'scissors';
+    computerChoice = 'Scissors';
   }
   //return value of computerChoice
   return computerChoice;
@@ -37,11 +37,11 @@ function getHumanChoice() {
   //prompt user for choice.
   userChoice = prompt('Make your choice (rock, paper or scissors)?');
   //set userChoice to lowercase.
-  userChoice = userChoice.toLowerCase()
+  userChoice = capitalizeFirstLetter(userChoice.toLowerCase());
   //check for valid choice(rock, paper or scissors).
-  if (userChoice === 'rock' 
-  || userChoice === 'paper' 
-  || userChoice === 'scissors') {
+  if (userChoice === 'Rock' 
+  || userChoice === 'Paper' 
+  || userChoice === 'Scissors') {
     //return userChoice if valid
     return userChoice
   } else {
