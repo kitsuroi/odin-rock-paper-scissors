@@ -51,7 +51,15 @@ let humanScore = 0;
 let computerScore = 0;
 
 //playRound play a single round, increment score and log winner.
-//initialize string variable humanChoice set to getHumanChoice.
-//initialize string variable computerChoice set to getComputerChoice.
-//check if human wins increment humanScore and log human win.
-//otherwise increment computerScore and log human loss.
+function playRound() {
+  //initialize string constant humanChoice set to getHumanChoice.
+  const humanChoice = getHumanChoice();
+  //initialize string constant computerChoice set to getComputerChoice.
+  const computerChoice = getComputerChoice();
+  console.log('human: ' + humanChoice);
+  console.log('computer: ' + computerChoice);
+  //check if human wins increment humanScore and log human win.
+  //otherwise increment computerScore and log human loss.
+}
+
+playRound();
