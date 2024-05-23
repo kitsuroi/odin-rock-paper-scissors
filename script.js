@@ -77,14 +77,15 @@ function playRound(humanChoice, computerChoice) {
 }
 
 //function playGame calls playRound 5 times
-
-//initialize integer variable humanScore set value to 0
-let humanScore = 0;
-//initialize integer variable computerScore set value to 0
-let computerScore = 0;
-//initialize string constant humanSelection set to getHumanChoice.
-const humanSelection = getHumanChoice();
-//initialize string constant computerSelection set to getComputerChoice.
-const computerSelection = getComputerChoice();
-// call round 5 times
-playRound(humanSelection, computerSelection);
+function playGame(){
+  //initialize integer variable humanScore set value to 0
+  let humanScore = 0;
+  //initialize integer variable computerScore set value to 0
+  let computerScore = 0;
+  //initialize string constant humanSelection set to getHumanChoice.
+  const humanSelection = getHumanChoice();
+  //initialize string constant computerSelection set to getComputerChoice.
+  const computerSelection = getComputerChoice();
+  // call round 5 times
+  playRound(humanSelection, computerSelection);
+}
