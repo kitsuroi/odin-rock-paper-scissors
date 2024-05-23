@@ -56,7 +56,7 @@ let humanScore = 0;
 //initialize integer variable computerScore set value to 0
 let computerScore = 0;
 
-//playRound play a single round, increment score and log winner.
+//playRound play a single round, increment score and display winner.
 function playRound() {
   //initialize string constant humanChoice set to getHumanChoice.
   const humanChoice = getHumanChoice();
@@ -64,18 +64,19 @@ function playRound() {
   const computerChoice = getComputerChoice();
   console.log('human: ' + humanChoice);
   console.log('computer: ' + computerChoice);
-  //check for a draw log a draw.
+  //check for a draw display a draw.
   if (humanChoice === computerChoice) {
     console.log(`It's a Draw. ${humanChoice} and ${computerChoice} draw.`);
   }
-  //check if human wins increment humanScore and log human win.
+  //check if human wins increment humanScore and display human win.
   else if (humanChoice === 'Rock' && computerChoice === 'Scissors'
   || humanChoice === 'Scissors' && computerChoice === 'Paper'
   || humanChoice === 'Paper' && computerChoice === 'Rock') {
     console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
     humanScore++;
   }
-  //otherwise increment computerScore and log human loss.
+  //otherwise increment computerScore and display human loss.
+  //display scores.
 }
 
 playRound();
