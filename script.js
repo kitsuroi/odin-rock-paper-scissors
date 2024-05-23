@@ -2,6 +2,12 @@
 function getRandomInt(max) {
   return Math.floor(Math.random() * max)
 }
+
+// first letter in string to uppercase
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // getComputerChoice of rock, paper or scissors.
 function getComputerChoice() {
   //generate a random integer from 0 to 3
