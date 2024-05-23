@@ -58,6 +58,7 @@ function playRound() {
   const computerChoice = getComputerChoice();
   console.log('human: ' + humanChoice);
   console.log('computer: ' + computerChoice);
+  //check for a draw log a draw.
   //check if human wins increment humanScore and log human win.
   //otherwise increment computerScore and log human loss.
 }
