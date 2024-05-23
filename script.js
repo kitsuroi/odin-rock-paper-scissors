@@ -49,3 +49,9 @@ function getHumanChoice() {
 let humanScore = 0;
 //initialize integer variable computerScore set value to 0
 let computerScore = 0;
+
+//playRound play a single round, increment score and log winner.
+//initialize string variable humanChoice set to getHumanChoice.
+//initialize string variable computerChoice set to getComputerChoice.
+//check if human wins increment humanScore and log human win.
+//otherwise increment computerScore and log human loss.
