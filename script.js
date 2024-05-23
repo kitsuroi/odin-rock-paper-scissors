@@ -76,6 +76,10 @@ function playRound() {
     humanScore++;
   }
   //otherwise increment computerScore and display human loss.
+  else {
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+    computerScore++;
+  }
   //display scores.
   console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
 }
