@@ -52,7 +52,11 @@ function getHumanChoice() {
 }
 
 //playRound play a single round, increment score and display winner.
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+  //initialize string constant humanChoice set to getHumanChoice.
+  const humanChoice = getHumanChoice();
+  //initialize string constant computerChoice set to getComputerChoice.
+  const computerChoice = getComputerChoice();
   //display humanChoice and computerChoice
   console.log('human: ' + humanChoice);
   console.log('computer: ' + computerChoice);
@@ -78,14 +82,17 @@ function playRound(humanChoice, computerChoice) {
 
 //function playGame calls playRound 5 times
 function playGame(){
-  //initialize integer variable humanScore set value to 0
-  let humanScore = 0;
-  //initialize integer variable computerScore set value to 0
-  let computerScore = 0;
-  //initialize string constant humanSelection set to getHumanChoice.
-  const humanSelection = getHumanChoice();
-  //initialize string constant computerSelection set to getComputerChoice.
-  const computerSelection = getComputerChoice();
   // call round 5 times
-  playRound(humanSelection, computerSelection);
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
 }
+
+//initialize integer variable humanScore set value to 0
+let humanScore = 0;
+//initialize integer variable computerScore set value to 0
+let computerScore = 0;
+
+playGame();
