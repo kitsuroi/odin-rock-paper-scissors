@@ -112,6 +112,19 @@ function playGame(){
       i = 6;
     }
   }
+  //display You win if humanScore highest
+  if (humanScore > computerScore){
+    console.log('You Win!');
+  }
+  //display You lose if ComputerScore highest
+  else if (humanScore < computerScore){
+    console.log('You Lose!');
+  }
+  //display Draw if score is equal
+  else {
+    console.log("It's a Draw!");
+  }
+  console.log("Thanks for playing.");
 }
 
 //initialize integer variable humanScore set value to 0
