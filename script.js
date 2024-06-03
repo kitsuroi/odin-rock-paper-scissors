@@ -52,7 +52,9 @@ function getHumanChoice() {
 }
 
 //playRound play a single round, increment score and display winner.
-function playRound() {
+function playRound(roundNumber) {
+  //display roundNumber
+  console.log(`Round ${roundNumber + 1}.`);
   //initialize string constant humanChoice set to getHumanChoice.
   const humanChoice = getHumanChoice();
   //initialize string constant computerChoice set to getComputerChoice.
@@ -83,11 +85,9 @@ function playRound() {
 //function playGame calls playRound 5 times
 function playGame(){
   // call round 5 times
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  for (let i = 0; i < 5; i++) {
+    playRound(i);
+  }
 }
 
 //initialize integer variable humanScore set value to 0
