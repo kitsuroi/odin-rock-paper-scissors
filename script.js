@@ -43,14 +43,17 @@ function playRound(humanChoice, computerChoice) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
       computerScore++;
     }
-    //display scores.
-    console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
+    result.textContent = `${humanScore} - ${computerScore}`;
   }
   
   //initialize integer variable humanScore set value to 0
   let humanScore = 0;
   //initialize integer variable computerScore set value to 0
   let computerScore = 0;
+
+  // make scoreboard
+  const result = document.querySelector("#result");
+  result.textContent = `${humanScore} - ${computerScore}`;
   
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) =>{
