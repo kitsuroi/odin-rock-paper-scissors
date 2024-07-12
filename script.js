@@ -29,18 +29,18 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
   //check for a draw display draw.
   if (humanChoice === computerChoice) {
-    console.log(`It's a Draw. ${humanChoice} and ${computerChoice} draw.`);
+    result.textContent = `It's a Draw. ${humanChoice} and ${computerChoice} draw.`;
   }
   //check if human wins increment humanScore and display human win.
   else if (humanChoice === 'rock' && computerChoice === 'scissors'
     || humanChoice === 'scissors' && computerChoice === 'paper'
     || humanChoice === 'paper' && computerChoice === 'rock') {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+      result.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
       humanScore++;
     }
     //otherwise increment computerScore and display human loss.
     else {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+      result.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
       computerScore++;
     }
     score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
