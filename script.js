@@ -103,30 +103,6 @@ function playRound(roundNumber) {
   console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
 }
 
-//function playGame calls playRound 5 times
-function playGame(){
-  // call round 5 times
-  for (let i = 0; i < 5; i++) {
-    let stopGame = playRound(i);
-    if (stopGame === true) {
-      i = 6;
-    }
-  }
-  //display You win if humanScore highest
-  if (humanScore > computerScore){
-    console.log('You Win!');
-  }
-  //display You lose if ComputerScore highest
-  else if (humanScore < computerScore){
-    console.log('You Lose!');
-  }
-  //display Draw if score is equal
-  else {
-    console.log("It's a Draw!");
-  }
-  console.log("Thanks for playing.");
-}
-
 //initialize integer variable humanScore set value to 0
 let humanScore = 0;
 //initialize integer variable computerScore set value to 0
