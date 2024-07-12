@@ -108,4 +108,9 @@ let humanScore = 0;
 //initialize integer variable computerScore set value to 0
 let computerScore = 0;
 
-playGame();
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) =>{
+  button.addEventListener("click", () => {
+    console.log(button.id);
+  })
+})
