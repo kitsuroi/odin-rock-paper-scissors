@@ -43,7 +43,7 @@ function playRound(humanChoice, computerChoice) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
       computerScore++;
     }
-    result.textContent = `${humanScore} - ${computerScore}`;
+    score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
   }
   
   //initialize integer variable humanScore set value to 0
@@ -51,9 +51,16 @@ function playRound(humanChoice, computerChoice) {
   //initialize integer variable computerScore set value to 0
   let computerScore = 0;
 
-  // make scoreboard
-  const result = document.querySelector("#result");
-  result.textContent = `${humanScore} - ${computerScore}`;
+  // make scoreboard + display for humanChoice and computerChoice + result
+  const container = document.querySelector("#container");
+  const score = document.createElement("div");
+  const choices = document.createElement("div");
+  const result = document.createElement("div");
+  container.appendChild(score);
+  container.appendChild(choices);
+  container.appendChild(result);
+  score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
+  
   
   const buttons = document.querySelectorAll("button");
   buttons.forEach((button) =>{
@@ -63,8 +70,7 @@ function playRound(humanChoice, computerChoice) {
       //initialize string constant computerChoice set to getComputerChoice.
       const computerChoice = getComputerChoice();
       //display humanChoice and computerChoice
-      console.log('human: ' + humanChoice);
-      console.log('computer: ' + computerChoice);
+      choices.textContent = `${humanChoice} VS ${computerChoice}`;
       playRound(humanChoice, computerChoice);
     })
   })
