@@ -26,34 +26,41 @@ function getComputerChoice() {
 }
 
 function checkWin() {
-  if (humanScore === 5){
-    
-  }
+  if (humanScore === 5 || computerScore === 5) {
+    removeChildren(container);
+    const endResult = document.createElement("h1");
+    container.appendChild(endResult);
+
+    if (humanScore === 5) {
+      endResult.textContent = "You win";
+    } else if (computerScore === 5){
+      endResult.textContent = "You lose";
+    }
+  }  
 }
 
 //playRound play a single round, increment score and display winner.
 function playRound(humanChoice, computerChoice) {
   //check for a draw display draw.
   if (humanChoice === computerChoice) {
-    result.textContent = `It's a Draw. ${humanChoice} and ${computerChoice} draw.`;
+    result.textContent = `Result: It's a Draw. ${humanChoice} and ${computerChoice} draw.`;
   }
   //check if human wins increment humanScore and display human win.
   else if (humanChoice === 'rock' && computerChoice === 'scissors'
     || humanChoice === 'scissors' && computerChoice === 'paper'
     || humanChoice === 'paper' && computerChoice === 'rock') {
-    result.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
-    humanScore++;
-  }
+      result.textContent = `Result: You win! ${humanChoice} beats ${computerChoice}.`;
+      humanScore++;
+    }
     //otherwise increment computerScore and display human loss.
-  else {
-    result.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
-    computerScore++;
-  }
+    else {
+      result.textContent = `Result: You lose! ${computerChoice} beats ${humanChoice}.`;
+      computerScore++;
+    }
     score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
-  
-  checkWin();
+    
+    checkWin();
   }
-
   
   //initialize integer variable humanScore set value to 0
   let humanScore = 0;
@@ -65,17 +72,19 @@ function playRound(humanChoice, computerChoice) {
       parent.removeChild(parent.lastChild);
     }
   }
-
+  
   // make scoreboard + display for humanChoice and computerChoice + result
   const container = document.querySelector("#container");
   
-  const score = document.createElement("div");
+  const score = document.createElement("h3");
   container.appendChild(score);
   score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
   const choices = document.createElement("div");
   container.appendChild(choices);
+  choices.textContent = "you VS computer"
   const result = document.createElement("div");
   container.appendChild(result);
+  result.textContent = "Result:";
   
   
   const buttons = document.querySelectorAll("button");
