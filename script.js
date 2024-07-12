@@ -71,46 +71,46 @@ function getHumanChoice() {
 function playRound(roundNumber) {
   //display roundNumber
   console.log(`Round ${roundNumber + 1}.`);
-  //initialize string constant humanChoice set to getHumanChoice.
-  const humanChoice = getHumanChoice();
-  //initialize string constant computerChoice set to getComputerChoice.
-  const computerChoice = getComputerChoice();
-  //display humanChoice and computerChoice
-  console.log('human: ' + humanChoice);
   //check if game got canceled
   if (humanChoice === 'Stop Game') {
     return stopGame = true;
   }
   //display computerChoice
-  console.log('computer: ' + computerChoice);
   //check for a draw display draw.
   if (humanChoice === computerChoice) {
     console.log(`It's a Draw. ${humanChoice} and ${computerChoice} draw.`);
   }
   //check if human wins increment humanScore and display human win.
   else if (humanChoice === 'Rock' && computerChoice === 'Scissors'
-  || humanChoice === 'Scissors' && computerChoice === 'Paper'
-  || humanChoice === 'Paper' && computerChoice === 'Rock') {
-    console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-    humanScore++;
+    || humanChoice === 'Scissors' && computerChoice === 'Paper'
+    || humanChoice === 'Paper' && computerChoice === 'Rock') {
+      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+      humanScore++;
+    }
+    //otherwise increment computerScore and display human loss.
+    else {
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+      computerScore++;
+    }
+    //display scores.
+    console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
   }
-  //otherwise increment computerScore and display human loss.
-  else {
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
-    computerScore++;
-  }
-  //display scores.
-  console.log(`Your score: ${humanScore} \nComputer's score: ${computerScore}`);
-}
-
-//initialize integer variable humanScore set value to 0
-let humanScore = 0;
-//initialize integer variable computerScore set value to 0
-let computerScore = 0;
-
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) =>{
-  button.addEventListener("click", () => {
-    console.log(button.id);
+  
+  //initialize integer variable humanScore set value to 0
+  let humanScore = 0;
+  //initialize integer variable computerScore set value to 0
+  let computerScore = 0;
+  
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach((button) =>{
+    button.addEventListener("click", () => {
+      //initialize string constant humanChoice set to button.id
+      const humanChoice = button.id;
+      //initialize string constant computerChoice set to getComputerChoice.
+      const computerChoice = getComputerChoice();
+      //display humanChoice and computerChoice
+      console.log('human: ' + humanChoice);
+      console.log('computer: ' + computerChoice);
+    })
   })
-})
+  
