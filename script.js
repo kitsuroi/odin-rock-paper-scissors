@@ -25,6 +25,12 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+function checkWin() {
+  if (humanScore === 5){
+    
+  }
+}
+
 //playRound play a single round, increment score and display winner.
 function playRound(humanChoice, computerChoice) {
   //check for a draw display draw.
@@ -35,31 +41,41 @@ function playRound(humanChoice, computerChoice) {
   else if (humanChoice === 'rock' && computerChoice === 'scissors'
     || humanChoice === 'scissors' && computerChoice === 'paper'
     || humanChoice === 'paper' && computerChoice === 'rock') {
-      result.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
-      humanScore++;
-    }
-    //otherwise increment computerScore and display human loss.
-    else {
-      result.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
-      computerScore++;
-    }
-    score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
+    result.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
+    humanScore++;
   }
+    //otherwise increment computerScore and display human loss.
+  else {
+    result.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
+    computerScore++;
+  }
+    score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
+  
+  checkWin();
+  }
+
   
   //initialize integer variable humanScore set value to 0
   let humanScore = 0;
   //initialize integer variable computerScore set value to 0
   let computerScore = 0;
+  
+  const removeChildren = (parent) => {
+    while (parent.lastChild) {
+      parent.removeChild(parent.lastChild);
+    }
+  }
 
   // make scoreboard + display for humanChoice and computerChoice + result
   const container = document.querySelector("#container");
+  
   const score = document.createElement("div");
-  const choices = document.createElement("div");
-  const result = document.createElement("div");
   container.appendChild(score);
-  container.appendChild(choices);
-  container.appendChild(result);
   score.textContent = `player: ${humanScore} - ${computerScore} :computer`;
+  const choices = document.createElement("div");
+  container.appendChild(choices);
+  const result = document.createElement("div");
+  container.appendChild(result);
   
   
   const buttons = document.querySelectorAll("button");
