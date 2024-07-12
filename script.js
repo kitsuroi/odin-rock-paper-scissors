@@ -3,18 +3,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max)
 }
 
-// first letter in string to uppercase
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function confirmButton() {
-  //prompt user confirm or cancel put boolean into isExecuted variable
-  let isExecuted = confirm('Do you want to quit the game?');
-  //isExecuted true return 
-  return isExecuted;
-}
-
 // getComputerChoice of rock, paper or scissors.
 function getComputerChoice() {
   //generate a random integer from 0 to 3
@@ -35,36 +23,6 @@ function getComputerChoice() {
   }
   //return value of computerChoice
   return computerChoice;
-}
-
-//getHumanChoice of rock, paper or scissors.
-function getHumanChoice() {
-  //initialize string variable userChoice.
-  let userChoice = '';
-  //prompt user for choice.
-  userChoice = prompt('Make your choice (rock, paper or scissors)?');
-  //check if player canceled or pressed esc
-  if (userChoice === null) {
-    let isExecuted = confirmButton();
-    if (isExecuted === true){
-      return 'Stop Game';
-    } else {
-      return getHumanChoice();
-    }
-  }
-  //set userChoice to lowercase.
-  userChoice = capitalizeFirstLetter(userChoice.toLowerCase());
-  //check for valid choice(rock, paper or scissors).
-  if (userChoice === 'Rock' 
-  || userChoice === 'Paper' 
-  || userChoice === 'Scissors') {
-    //return userChoice if valid
-    return userChoice;
-  } else {
-    //retry until userChoice is valid
-    alert('Input is wrong please try again. Valid inputs are rock, paper or scissors.')
-    return getHumanChoice();
-  }
 }
 
 //playRound play a single round, increment score and display winner.
