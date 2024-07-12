@@ -23,15 +23,15 @@ function getComputerChoice() {
   let computerChoice = '';
   //if randomInt is 0 set computerChoice to 'rock'.
   if (randomInt === 0) {
-    computerChoice = 'Rock';
+    computerChoice = 'rock';
   }
   //if randomInt is 0 set computerChoice to 'paper'.
   else if (randomInt === 1) {
-    computerChoice = 'Paper';
+    computerChoice = 'paper';
   }
   //if randomInt is 0 set computerChoice to 'scissors'.
   else {
-    computerChoice = 'Scissors';
+    computerChoice = 'scissors';
   }
   //return value of computerChoice
   return computerChoice;
@@ -68,22 +68,15 @@ function getHumanChoice() {
 }
 
 //playRound play a single round, increment score and display winner.
-function playRound(roundNumber) {
-  //display roundNumber
-  console.log(`Round ${roundNumber + 1}.`);
-  //check if game got canceled
-  if (humanChoice === 'Stop Game') {
-    return stopGame = true;
-  }
-  //display computerChoice
+function playRound(humanChoice, computerChoice) {
   //check for a draw display draw.
   if (humanChoice === computerChoice) {
     console.log(`It's a Draw. ${humanChoice} and ${computerChoice} draw.`);
   }
   //check if human wins increment humanScore and display human win.
-  else if (humanChoice === 'Rock' && computerChoice === 'Scissors'
-    || humanChoice === 'Scissors' && computerChoice === 'Paper'
-    || humanChoice === 'Paper' && computerChoice === 'Rock') {
+  else if (humanChoice === 'rock' && computerChoice === 'scissors'
+    || humanChoice === 'scissors' && computerChoice === 'paper'
+    || humanChoice === 'paper' && computerChoice === 'rock') {
       console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
       humanScore++;
     }
@@ -111,6 +104,7 @@ function playRound(roundNumber) {
       //display humanChoice and computerChoice
       console.log('human: ' + humanChoice);
       console.log('computer: ' + computerChoice);
+      playRound(humanChoice, computerChoice);
     })
   })
   
